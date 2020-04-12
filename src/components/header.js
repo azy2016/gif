@@ -10,7 +10,6 @@ export default (props) => (
             <nav className={Style.nav}>
                 <ul>
                     <li><a href="/">首页</a></li>
-                    <li><a href="/like">我的点赞</a></li>
                 </ul>
             </nav>
         </div>

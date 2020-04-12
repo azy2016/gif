@@ -103,7 +103,10 @@ class Item extends React.Component {
         e.stopPropagation();
         let key = `gif_${this.state.id}`;
         if(!this.state.like){
-            let data = this.props.itemData;
+            let data = {
+                id: this.state.id,
+                like: this.state.likeNum
+            };
             data.like++;
             windowGlobal.localStorage.setItem(key, JSON.stringify(data));
             this.setState({
