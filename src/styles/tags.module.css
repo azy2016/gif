@@ -1,0 +1,26 @@
+.tags-box {
+    width: 100%;
+    padding: 20px;
+    background: #fff;
+}
+.hot-tag {
+    padding-left: .5rem;
+    margin-bottom: .5rem;
+    border-left: 4px solid #1ca086;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 600;
+}
+.tags-box a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 2px;
+    margin: .3rem .6rem .3rem 0;
+    background: #1ca086;
+    color: #fff;
+    font-size: 16px;
+}
+.tags-box a:hover {
+    background: #ffde00;
+} 
