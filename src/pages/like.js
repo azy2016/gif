@@ -7,10 +7,11 @@ import SEO from "../components/seo"
 import Content from "../components/content"
 
 function getLocaStoresData() {
+    const windowGlobal = typeof window !== 'undefined' && window;
     let objs = [];
-    for (let i = 0; i < localStorage.length; i++) {
-        let key = localStorage.key(i); //获取本地存储的Key
-        let obj = localStorage.getItem(key);//所有value
+    for (let i = 0; i < windowGlobal.localStorage.length; i++) {
+        let key = windowGlobal.localStorage.key(i); //获取本地存储的Key
+        let obj = windowGlobal.localStorage.getItem(key);//所有value
         objs.push(JSON.parse(obj));
     }
     return objs;
