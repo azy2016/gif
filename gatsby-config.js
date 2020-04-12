@@ -10,6 +10,7 @@ module.exports = {
     title: `gif收藏夹`,
     description: `一个以收藏最多gif图片为目标的网站`,
     author: `3000`,
+    siteUrl: `https://like-gif.com`,
   },
   plugins: [
     {
@@ -34,5 +35,6 @@ module.exports = {
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sitemap`,
   ],
 }
