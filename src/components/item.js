@@ -19,7 +19,8 @@ class Item extends React.Component {
     }
 
     componentDidMount() {
-        let like = localStorage.getItem(`gif_${this.state.id}`);
+        const windowGlobal = typeof window !== 'undefined' && window;
+        let like = windowGlobal.localStorage.getItem(`gif_${this.state.id}`);
         if (like !== null) {
             let likeNum = JSON.parse(like).like;
             if(likeNum < this.state.likeNum) {
@@ -98,12 +99,13 @@ class Item extends React.Component {
     }
 
     handelLike(e) {
+        const windowGlobal = typeof window !== 'undefined' && window;
         e.stopPropagation();
         let key = `gif_${this.state.id}`;
         if(!this.state.like){
             let data = this.props.itemData;
             data.like++;
-            localStorage.setItem(key, JSON.stringify(data));
+            windowGlobal.localStorage.setItem(key, JSON.stringify(data));
             this.setState({
                 like: true,
                 ani: true,
