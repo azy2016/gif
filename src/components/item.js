@@ -1,15 +1,15 @@
-import React from "react"
-import { Link } from "gatsby"
-import Style from "../styles/item.module.css"
-import axios from "axios"
+import React from "react";
+import { Link } from "gatsby";
+import Style from "../styles/item.module.css";
+import axios from "axios";
+import LazyLoad from 'react-lazy-load';
 
 class Item extends React.Component {
     constructor(props){
         super(props);
         this.state = {
             like: "",
-            status: "STATIC",
-            src: this.props.itemData.thumb,
+            src: this.props.itemData.src,
             id: this.props.itemData.id,
             createdAt: this.props.itemData.create_at,
             tags: this.props.itemData.tags,
@@ -34,15 +34,6 @@ class Item extends React.Component {
         }
     }
 
-    handleLoad() {
-        if(this.state.status === "LOAD"){
-            this.setState({
-                status: "FINISH"
-            })
-            this.count(2);
-        }
-    }
-
     count(action) {
         axios({
             method: "POST",
@@ -63,39 +54,6 @@ class Item extends React.Component {
                 'Content-Type': 'application/x-www-form-urlencoded'
             }
         })
-    }
-
-    playGif() {
-        let status = this.state.status;
-        let src = this.state.src;
-        if(status === "STATIC"){
-            status = "LOAD";
-            src = this.props.itemData.src;
-        } else if (status === "FINISH") {
-            status = "STATIC";
-            src = this.props.itemData.thumb;
-        }
-        this.setState({
-            status: status,
-            src: src
-        })
-
-    }
-
-    loadButton() {
-        let status = this.state.status;
-        let button = "";
-        switch(status) {
-            case "STATIC":
-                button = (<div className={Style.play}></div>)
-                break;
-            case "LOAD":
-                button = (<div className={Style.load}></div>)
-                break;
-            default :
-                break;
-        }
-        return button;
     }
 
     handelLike(e) {
@@ -138,9 +96,10 @@ class Item extends React.Component {
             <div className={Style.item} >
                 
                 <p className={Style.desc}>{this.props.itemData.desc}</p>
-                <div className={Style.imgBox} onClick={() => this.playGif()}>
-                    <img src={this.state.src}  onLoad={() => this.handleLoad()} alt={this.tags()} />
-                    {this.loadButton()}
+                <div className={Style.imgBox} >
+                <LazyLoad height={268} offsetVertical={300}>
+                    <img src={this.state.src} alt={this.tags()} onLoad={() => this.count(2)} />
+                </LazyLoad>
                 </div>
                 <div className={Style.header}>
                     <div className={Style.tags}>
