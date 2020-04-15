@@ -8,22 +8,16 @@ module.exports = {
   /* Your site config here */
   siteMetadata: {
     title: `gif收藏夹`,
-    description: `一个以收藏最多gif图片为目标的网站`,
+    description: `一个以收藏gif图片为目标的网站`,
     author: `3000`,
     siteUrl: `https://like-gif.com`,
   },
   plugins: [
     {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
-    },
-    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `gif收藏夹`,
-        short_name: `like-gif`,
+        short_name: `gif收藏夹`,
         start_url: `/`,
         background_color: `#1ca086`,
         theme_color: `#1ca086`,
@@ -34,16 +28,19 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-baidu-analytics`,
       options: {
-        // baidu analytics siteId
         siteId: "32c2baf043674b566784329e6663db90",
-        // Put analytics script in the head instead of the body [default:false]
         head: false,
       },
     },
     `gatsby-plugin-offline`,
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sitemap`,
-  ],
+    `gatsby-plugin-react-helmet`
+  ]
 }

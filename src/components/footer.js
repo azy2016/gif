@@ -13,7 +13,7 @@ export default (props) => (
             fontSize: `12px`,
             textAlign: `center`
         }}>
-           关于本站：一切从2019年的一只蝙蝠开始，应为站长在家闲的无聊做了这个网站，目标打造为全网最大的gif图片网站。
+           关于本站：所有图片来源于网络，仅供学习参考使用。若有侵犯版权请来信告知,我们将立即更正邮箱：linghuiazy@gmail.com
         </p>
     </footer>
 )
