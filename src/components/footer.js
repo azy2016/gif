@@ -13,7 +13,7 @@ export default (props) => (
             fontSize: `12px`,
             textAlign: `center`
         }}>
-           关于本站：所有图片来源于网络，仅供学习参考使用。若有侵犯版权请来信告知,我们将立即更正邮箱：linghuiazy@gmail.com
+           关于本站：专注收集各种gif图片。
         </p>
     </footer>
 )
