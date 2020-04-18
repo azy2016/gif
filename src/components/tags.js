@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import Style from "../styles/tags.module.css"
-import JsonData from "../../content/json/tags.json"
+import JsonData from "../../content/tags.json"
 
 export default (props) => (
     <div className={Style.tagsBox}>

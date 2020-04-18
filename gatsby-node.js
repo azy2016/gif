@@ -1,4 +1,4 @@
-const jsonData = require('./content/json/db.json');
+const jsonData = require('./content/db.json');
 exports.createPages = async ({ actions: { createPage } }) => {
     const NUM = 20; //每页数据数量
     const page = Math.ceil(jsonData.length / NUM); //总页数

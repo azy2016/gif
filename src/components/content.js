@@ -1,5 +1,5 @@
-import React from "react"
-import Style from "../styles/content.module.css"
+import React from "react";
+import Style from "../styles/content.module.css";
 
 export default (props) => (
     <div className={Style.content}>
