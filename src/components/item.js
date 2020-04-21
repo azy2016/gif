@@ -97,7 +97,7 @@ class Item extends React.Component {
                 
                 <p className={Style.desc}>{this.props.itemData.desc}</p>
                 <div className={Style.imgBox} >
-                <LazyLoad height={268} offsetVertical={300}>
+                <LazyLoad offsetVertical={300}>
                     <img src={this.state.src} alt={this.tags()} onLoad={() => this.count(2)} />
                 </LazyLoad>
                 </div>
