@@ -24,7 +24,7 @@ export default ({pageContext: { rootPath,chuckData,page,nowPage }}) => {
 
     return (
         <Layout>
-        <SEO title={tagName ? tagName : 'gif列表'} />
+        <SEO title={tagName ? tagName + 'gif图片' : 'gif列表'} />
         <Content 
             tagName={getTagName(rootPath, chuckData)}
             contentLeft={
